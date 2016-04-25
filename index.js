@@ -18,6 +18,7 @@ function Stdbot (adapter) {
   emitter.mention = adapter.mention
   emitter.address = adapter.address
   emitter.isMentioned = adapter.isMentioned
+  emitter.end = adapter.end
 
   emitter.send = (message, text) => adapter.send(message, text).then(formatMessage)
   emitter.edit = (message, text) => adapter.edit(message, text).then(formatMessage)
