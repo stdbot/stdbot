@@ -12,6 +12,7 @@ function Stdbot (adapter) {
     })
 
   adapter.on('error', err => emitter.emit('error', err))
+  adapter.on('load', state => emitter.emit('load', state))
   adapter.on('message', message => emitter.emit('message', formatMessage(message)))
 
   emitter.mention = adapter.mention
