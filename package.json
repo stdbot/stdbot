@@ -1,0 +1,19 @@
+{
+  "name": "stdbot",
+  "version": "0.1.0",
+  "description": "Standard Node.js chat interface for bots.",
+  "homepage": "https://github.com/stdbot/stdbot",
+  "bugs": "https://github.com/stdbot/stdbot/issues",
+  "license": "Unlicense",
+  "author": {
+    "name": "Valérian Galliat",
+    "url": "https://val.codejam.info/"
+  },
+  "repository": "stdbot/stdbot",
+  "scripts": {
+    "lint": "standard"
+  },
+  "devDependencies": {
+    "standard": "^5.4.1"
+  }
+}
