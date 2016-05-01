@@ -61,6 +61,7 @@ representing the message you sent.
   name by a `@`.
 * `address` a message to an user for example by mentioning them and
   adding a suffix like `, ` or `: `.
+* `mentions` to get the list of users mentioned in a message.
 * `isMentioned` to tell if a user is mentioned in a message.
 * `end` the stream to stop listening.
 

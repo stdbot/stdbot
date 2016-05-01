@@ -17,6 +17,7 @@ function Stdbot (adapter) {
 
   emitter.mention = adapter.mention
   emitter.address = adapter.address
+  emitter.mentions = adapter.mentions
   emitter.isMentioned = adapter.isMentioned
   emitter.end = adapter.end
 
