@@ -1,4 +1,4 @@
-# stdbot
+# stdbot [![npm version](http://img.shields.io/npm/v/stdbot.svg?style=flat-square)](https://www.npmjs.org/package/stdbot-slack)
 
 > Basically, [Hubot][hubot] as a library.
 
