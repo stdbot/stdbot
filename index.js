@@ -9,6 +9,8 @@ function Stdbot (adapter) {
       reply: text => emitter.reply(message, text)
     }, emitter.edit && {
       edit: text => emitter.edit(message, text)
+    }, emitter.tag && {
+      tag: text => emitter.tag(message, text)
     })
 
   adapter.on('error', err => emitter.emit('error', err))
@@ -22,7 +24,14 @@ function Stdbot (adapter) {
   emitter.end = adapter.end
 
   emitter.send = (message, text) => adapter.send(message, text).then(formatMessage)
-  emitter.edit = (message, text) => adapter.edit(message, text).then(formatMessage)
+
+  if (adapter.edit) {
+    emitter.edit = (message, text) => adapter.edit(message, text).then(formatMessage)
+  }
+
+  if (adapter.tag) {
+    emitter.tag = (message, text) => adapter.tag(message, text).then(formatMessage)
+  }
 
   emitter.reply = (message, text) =>
     emitter.send(message, emitter.address(message.author, text))
