@@ -3,7 +3,7 @@ const { EventEmitter } = require('events')
 function Stdbot (adapter) {
   const emitter = new EventEmitter()
 
-  const formatMessage = message =>
+  const formatMessage = emitter.formatMessage = message =>
     Object.assign({}, message, {
       send: text => emitter.send(message, text),
       reply: text => emitter.reply(message, text)
