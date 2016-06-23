@@ -1,6 +1,6 @@
 {
   "name": "stdbot",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Standard Node.js chat interface for bots.",
   "homepage": "https://github.com/stdbot/stdbot",
   "bugs": "https://github.com/stdbot/stdbot/issues",
