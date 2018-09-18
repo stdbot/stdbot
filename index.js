@@ -11,6 +11,8 @@ function Stdbot (adapter) {
       edit: text => emitter.edit(message, text)
     }, emitter.tag && {
       tag: text => emitter.tag(message, text)
+    }, emitter.react && {
+      react: emoji => emitter.react(message, emoji)
     })
 
   adapter.on('error', err => emitter.emit('error', err))
