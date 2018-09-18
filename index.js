@@ -35,6 +35,10 @@ function Stdbot (adapter) {
     emitter.tag = (message, text) => adapter.tag(message, text).then(formatMessage)
   }
 
+  if (adapter.react) {
+    emitter.react = (message, emoji) => adapter.react(message, emoji).then(formatMessage)
+  }
+
   emitter.reply = (message, text) =>
     emitter.send(message, emitter.address(message.author, text))
 
