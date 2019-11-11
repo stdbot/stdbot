@@ -5,7 +5,7 @@ function Stdbot (adapter) {
 
   const formatMessage = emitter.formatMessage = message =>
     Object.assign({}, message, {
-      send: text => emitter.send(message, text),
+      send: (text, options) => emitter.send(message, text, options),
       reply: text => emitter.reply(message, text)
     }, emitter.edit && {
       edit: text => emitter.edit(message, text)
@@ -25,7 +25,7 @@ function Stdbot (adapter) {
   emitter.isMentioned = adapter.isMentioned
   emitter.end = adapter.end
 
-  emitter.send = (message, text) => adapter.send(message, text).then(formatMessage)
+  emitter.send = (message, text, options) => adapter.send(message, text, options).then(formatMessage)
 
   if (adapter.edit) {
     emitter.edit = (message, text) => adapter.edit(message, text).then(formatMessage)
